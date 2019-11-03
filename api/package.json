@@ -1,0 +1,15 @@
+{
+  "name": "moneytalks.api",
+  "version": "1.0.0",
+  "description": "Aplicação de gerenciamento da carteira.",
+  "main": "server.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1",
+    "start": "node server.js"
+  },
+  "author": "Luis Paulo Oliveira",
+  "license": "ISC",
+  "dependencies": {
+    "express": "4.16.3"
+  }
+}
