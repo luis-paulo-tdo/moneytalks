@@ -8,7 +8,7 @@ import { CostsService } from './costs/costs.service';
 })
 export class AppComponent implements OnInit {
 
-  title = 'Angular';
+  title = '';
 
   constructor(private costsService: CostsService) { }
 
@@ -17,10 +17,10 @@ export class AppComponent implements OnInit {
   }
 
   getHome() {
-    this.costsService.getHome().subscribe(result => this.title = result);
+    this.costsService.getHome().subscribe(result => this.title = result.title);
   }
 
   getCosts() {
-    this.costsService.getCosts().subscribe(result => this.title = result);
+    this.costsService.getCosts().subscribe(result => this.title = result.title);
   }
 }

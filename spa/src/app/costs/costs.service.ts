@@ -4,6 +4,10 @@ import { Observable } from 'rxjs';
 
 const API_URL = 'http://localhost:3000';
 
+export class PageTemplate {
+  title: string;
+}
+
 @Injectable({
   providedIn: 'root'
 })
@@ -11,11 +15,11 @@ export class CostsService {
 
   constructor(private http: HttpClient) { }
 
-  getHome(): Observable<string> {
-    return this.http.get<string>(`${API_URL}/`);
+  getHome(): Observable<PageTemplate> {
+    return this.http.get<PageTemplate>(`${API_URL}/`);
   }
 
-  getCosts(): Observable<string> {
-    return this.http.get<string>(`${API_URL}/costs`);
+  getCosts(): Observable<PageTemplate> {
+    return this.http.get<PageTemplate>(`${API_URL}/costs`);
   }
 }
