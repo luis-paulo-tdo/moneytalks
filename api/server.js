@@ -1,13 +1,18 @@
-const http = require('http');
+const express = require('express');
+const cors = require('cors');
+const app = express();
 
-const server = http.createServer((request, response) => {
+app.use(cors());
+app.listen(3000, () => console.log(`Servidor rodando na porta 3000`));
 
-    let html = '';
-    if (request.url == '/') {
-        html = `Home`;
-    } else if (request.url == '/costs') {
-        html = `Costs`;
-    }
-    response.end(html);
+app.get('/', (request, response) => {
+    response.send({ 
+        title: 'Home' 
+    });
 });
-server.listen('3000');
+
+app.get('/costs', (request, response) => {
+    response.send({
+        title: 'Costs'
+    });
+});
